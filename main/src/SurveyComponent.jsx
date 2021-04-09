@@ -1,4 +1,6 @@
-﻿import React, { Component } from "react";
+﻿// V 0.0.1
+
+import React, { Component } from "react";
 
 
 import * as Survey from "survey-react";
