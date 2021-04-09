@@ -544,7 +544,7 @@ class SurveyComponent extends Component {
                   "name": "question1",
                   "title": "Fever (≥38 °C) or history of fever ",
                   "titleLocation": "left",
-                  //"isRequired": true,
+                  "isRequired": true,
                   "choices": [
                     {
                       "value": "item1",
@@ -570,7 +570,7 @@ class SurveyComponent extends Component {
               "name": "smell_loss",
               "title": "Loss of smell and taste",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -593,7 +593,7 @@ class SurveyComponent extends Component {
               "name": "appetite_loss",
               "title": "Loss of appetite",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -616,7 +616,7 @@ class SurveyComponent extends Component {
               "name": "sore_throat",
               "title": "Sore throat",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -640,7 +640,7 @@ class SurveyComponent extends Component {
               "name": "runny_nose",
               "title": "Runny nose",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -662,7 +662,7 @@ class SurveyComponent extends Component {
               "name": "cough",
               "title": "Cough",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -684,7 +684,7 @@ class SurveyComponent extends Component {
               "name": "shortness_of_Breath",
               "title": "Shortness of Breath",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -706,7 +706,7 @@ class SurveyComponent extends Component {
               "name": "vomiting",
               "title": "Vomiting",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -728,7 +728,7 @@ class SurveyComponent extends Component {
               "name": "nausea",
               "title": "Nausea",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -750,7 +750,7 @@ class SurveyComponent extends Component {
               "name": "diarrhea",
               "title": "Diarrhea",
               "titleLocation": "left",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -804,7 +804,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Asthman_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -831,7 +831,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "respiratory_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -857,7 +857,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "heart_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -883,7 +883,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Diabetes_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -909,7 +909,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Cancer_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -935,7 +935,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Stroke_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -961,7 +961,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Rheumatoid_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -987,7 +987,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Hypertension_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1013,7 +1013,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Kidney_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1039,7 +1039,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Immunocompromised_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1065,7 +1065,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "lung_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1091,7 +1091,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Obesity_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1117,7 +1117,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Pregnancy_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1143,7 +1143,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "Sickle_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1169,7 +1169,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "chronic_panel",
-              //"isRequired": true,
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1448,6 +1448,7 @@ class SurveyComponent extends Component {
                   "name": "others_radio",
                   "width": "50%",
                   "titleLocation": "hidden",
+                  "isRequired": true,
                   "choices": [
                     {
                       "value": "item1",
@@ -1483,6 +1484,7 @@ class SurveyComponent extends Component {
                   "name": "have_you_travelled_within_the_last_days_domestically_radio",
                   "width": "50%",
                   "titleLocation": "hidden",
+                  "isRequired": true,
                   "choices": [
                     {
                       "value": "item1",
@@ -1544,6 +1546,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "have_you_travelled_within_the_last_days_internationall_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1610,6 +1613,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "in_the_past_days_have_you_had_contact_with_a_anyone_with_suspected_or_confirmed_ncov_infection_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1649,6 +1653,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "patient_attended_festival_or_mass_gathering_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1685,6 +1690,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "illness_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1711,6 +1717,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "hygiene_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
@@ -1737,6 +1744,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "protection_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
