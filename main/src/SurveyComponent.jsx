@@ -21,8 +21,13 @@ class SurveyComponent extends Component {
         
 
         const json = {
-  "title": "CS4800 Draft Project – Site for suspected and probable cases of COVID-19",
+  "title": "CS4800 Draft Project | Site for suspected and probable cases of COVID-19",
+
+
   "pages": [
+
+    //Page 0
+    /*
     {
       "name": "page1",
       "navigationTitle": "Collector",
@@ -107,40 +112,51 @@ class SurveyComponent extends Component {
         }
       ]
     },
+    */
+
+    //Uncomment when done with page III
+
+    // Page I
+    
     {
-      "name": "page2",
-      "navigationTitle": "Person",
-      "navigationDescription": "Person's info",
+      "name": "page1",
+      "navigationTitle": "Patient",
+      "navigationDescription": "Patient info",
       "elements": [
         {
           "type": "boolean",
           "name": "is_the_person_providing_the_information_is_the_patient",
-          "title": "Is the person providing the information is the patient?",
+          "title": "Is the person providing the information the patient?",
           "isRequired": true,
           "labelTrue": "Yes",
           "labelFalse": "No",
           "hideNumber": true
         },
+
+        // If boolean TRUE
         {
           "type": "panel",
           "name": "case_identifier_information ",
           "elements": [
             {
               "type": "text",
-              "name": "given_names",
-              "title": "Given name(s)"
+              "name": "first_names",
+              "title": "First name",
+              //"isRequired": true
             },
             {
               "type": "text",
-              "name": "family_name",
+              "name": "last_name",
               "startWithNewLine": false,
-              "title": "Family name"
+              "title": "Last name",
+              //"isRequired": true
             },
             {
               "type": "radiogroup",
               "name": "case_identifier_information_sex",
               "startWithNewLine": false,
               "title": "Sex",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -152,7 +168,7 @@ class SurveyComponent extends Component {
                 },
                 {
                   "value": "item3",
-                  "text": "Not known"
+                  "text": "Other/Not known"
                 }
               ],
               "colCount": 3
@@ -166,7 +182,8 @@ class SurveyComponent extends Component {
                   "name": "case_identifier_information_patient_date_of_birth_date",
                   "visibleIf": "{case_identifier_information_patient_date_of_birth_checkbox} empty",
                   "titleLocation": "hidden",
-                  "inputType": "date"
+                  "inputType": "date",
+                  //"isRequired": true
                 },
                 {
                   "type": "checkbox",
@@ -180,12 +197,16 @@ class SurveyComponent extends Component {
               ],
               "title": "Date of Birth"
             },
+            // Phone # Snippet
+            /*
             {
               "type": "text",
               "name": "case_identifier_information_patient_telephone_mobile_number",
               "title": "Telephone (mobile) number",
               "inputType": "tel"
             },
+            */
+
             {
               "type": "panel",
               "name": "case_identifier_information_patient_age",
@@ -196,7 +217,8 @@ class SurveyComponent extends Component {
                   "visibleIf": "{case_identifier_information_patient_age_checkbox} empty",
                   "title": "Years:",
                   "titleLocation": "left",
-                  "inputType": "number"
+                  "inputType": "number",
+                  //"isRequired": true
                 },
                 {
                   "type": "text",
@@ -205,7 +227,8 @@ class SurveyComponent extends Component {
                   "startWithNewLine": false,
                   "title": "Months:",
                   "titleLocation": "left",
-                  "inputType": "number"
+                  "inputType": "number",
+                  //"isRequired": true,
                 },
                 {
                   "type": "checkbox",
@@ -219,28 +242,87 @@ class SurveyComponent extends Component {
               ],
               "title": "Age (years, months) "
             },
+
+            // Race/Ethnicity snippet
+            {
+              "type": "dropdown",
+              "name": "case_identifier_information_patient_race",
+              "title": "What is your race/ethnicity?",
+              //"isRequired": true,
+              "choices": [
+                "American Indian or Alaska Native",
+                "Asian",
+                "Black or African American",
+                "Hispanic",
+                "Native Hawaiian or Other Pacific Islander",
+                "Non-Hispanic White",
+                "Other"
+              ],
+              // Choice by url
+              /*
+              "choicesByUrl": {
+                "url": "https://developer.uat.usajobs.gov/API-Reference/GET-codelist-ethnicity",
+                "valueName": "name"
+              }
+              */
+            },
+
+
+            // Height snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_height",
+              "title": "What is your height in cm?",
+              "inputType": "text",
+              //"isRequired": true
+            },
+
+            // Weight Snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_weight",
+              "startWithNewLine": false,
+              "title": "What is your weight in pounds(lbs)?",
+              "inputType": "text",
+              //"isRequired": true,
+            },
+
+            // Email snippet
+            /*
             {
               "type": "text",
               "name": "case_identifier_information_patient_email",
               "title": "Email",
               "inputType": "email"
             },
+            */
+
+            // Address Snippet
+            /*
             {
               "type": "text",
               "name": "case_identifier_information_patient_address",
               "startWithNewLine": false,
               "title": "Address"
             },
+            */
+
+            // identifier Snippet
+            /*
             {
               "type": "text",
               "name": "case_identifier_information_patient_national_social_number",
               "startWithNewLine": false,
               "title": "National social number/ identifier (if applicable)"
             },
+            */
+
+            // Residence Snippet
             {
               "type": "dropdown",
               "name": "case_identifier_information_patient_country_of_residence",
               "title": "Country of residence",
+              //"isRequired": true,
               "choices": [
                 "item1",
                 "item2",
@@ -251,11 +333,35 @@ class SurveyComponent extends Component {
                 "valueName": "name"
               }
             },
+
+            // Zipcode Snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_zip",
+              "startWithNewLine": false,
+              "title": "What is your zipcode?",
+              "inputType": "text",
+              //"isRequired": true
+            },
+
+            // Smoked question
+            {
+              "type": "boolean",
+              "name": "have_you_ever_smoked",
+              "title": "Have you ever smoked?",
+              //"isRequired": true,
+              "labelTrue": "Yes",
+              "labelFalse": "No",
+              "hideNumber": true
+            },
+
+            // Case status snippet
             {
               "type": "radiogroup",
               "name": "case_identifier_information_patient_case_status",
-              "startWithNewLine": false,
+              //"startWithNewLine": false,
               "title": "Case status",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -271,13 +377,17 @@ class SurveyComponent extends Component {
                 }
               ],
               "colCount": 3
+
+
             }
           ],
           "visibleIf": "{is_the_person_providing_the_information_is_the_patient} = true",
-          "title": "Case Identifier Information",
+          "title": "Patient Information",
           "showNumber": true,
           "showQuestionNumbers": "off"
         },
+
+        // If boolean FALSE
         {
           "type": "panel",
           "name": "interview_respondent_information_if_the_persons_providing_the_information_is_not_the_patient",
@@ -291,7 +401,7 @@ class SurveyComponent extends Component {
               "type": "text",
               "name": "surname",
               "startWithNewLine": false,
-              "title": "Surname"
+              "title": "Last name"
             },
             {
               "type": "radiogroup",
@@ -342,12 +452,19 @@ class SurveyComponent extends Component {
               "name": "relationship_to_patient",
               "title": "Relationship to patient"
             },
+
+            // Address Snippet
+            /*
             {
               "type": "text",
               "name": "respondent_address",
               "startWithNewLine": false,
               "title": "Respondent address"
             },
+            */
+
+            // Phone # Snippet
+            /*
             {
               "type": "text",
               "name": "interview_respondent_information_patient_telephone_mobile_number",
@@ -355,6 +472,8 @@ class SurveyComponent extends Component {
               "title": "Telephone (mobile) number",
               "inputType": "tel"
             }
+            */
+
           ],
           "visibleIf": "{is_the_person_providing_the_information_is_the_patient} = false",
           "title": "Interview respondent information",
@@ -363,11 +482,16 @@ class SurveyComponent extends Component {
         }
       ]
     },
+
+    // Page II
     {
-      "name": "page3",
+      "name": "page2",
       "navigationTitle": "Symptoms",
       "navigationDescription": "Patient symptoms",
       "elements": [
+        
+        // Image Snippet
+        /*
         {
           "type": "image",
           "name": "third_page_image",
@@ -376,6 +500,8 @@ class SurveyComponent extends Component {
           "imageWidth": 500,
           "width": "600px"
         },
+        */
+
         {
           "type": "panel",
           "name": "patient_symptoms_from_disease_onset",
@@ -416,6 +542,7 @@ class SurveyComponent extends Component {
                   "name": "question1",
                   "title": "Fever (≥38 °C) or history of fever ",
                   "titleLocation": "left",
+                  //"isRequired": true,
                   "choices": [
                     {
                       "value": "item1",
@@ -435,11 +562,13 @@ class SurveyComponent extends Component {
               ],
               "title": "Date of first symptom onset"
             },
+
             {
               "type": "radiogroup",
-              "name": "sore_throat",
-              "title": "Sore throat",
+              "name": "smell_loss",
+              "title": "Loss of smell and taste",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -456,11 +585,60 @@ class SurveyComponent extends Component {
               ],
               "colCount": 3
             },
+
+            {
+              "type": "radiogroup",
+              "name": "appetite_loss",
+              "title": "Loss of appetite",
+              "titleLocation": "left",
+              //"isRequired": true,
+              "choices": [
+                {
+                  "value": "item1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "item2",
+                  "text": "No"
+                },
+                {
+                  "value": "item3",
+                  "text": "Unknown"
+                }
+              ],
+              "colCount": 3
+            },
+
+            {
+              "type": "radiogroup",
+              "name": "sore_throat",
+              "title": "Sore throat",
+              "titleLocation": "left",
+              //"isRequired": true,
+              "choices": [
+                {
+                  "value": "item1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "item2",
+                  "text": "No"
+                },
+                {
+                  "value": "item3",
+                  "text": "Unknown"
+                }
+              ],
+              "colCount": 3
+            },
+
+
             {
               "type": "radiogroup",
               "name": "runny_nose",
               "title": "Runny nose",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -482,6 +660,7 @@ class SurveyComponent extends Component {
               "name": "cough",
               "title": "Cough",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -503,6 +682,7 @@ class SurveyComponent extends Component {
               "name": "shortness_of_Breath",
               "title": "Shortness of Breath",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -524,6 +704,7 @@ class SurveyComponent extends Component {
               "name": "vomiting",
               "title": "Vomiting",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -545,6 +726,7 @@ class SurveyComponent extends Component {
               "name": "nausea",
               "title": "Nausea",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -566,6 +748,7 @@ class SurveyComponent extends Component {
               "name": "diarrhea",
               "title": "Diarrhea",
               "titleLocation": "left",
+              //"isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -583,18 +766,23 @@ class SurveyComponent extends Component {
               "colCount": 3
             }
           ],
-          "title": "Patient symptoms (from disease onset)",
+          "title": "Potential COVID-19 symptoms?",
           "startWithNewLine": false,
           "showNumber": true,
           "showQuestionNumbers": "off"
         }
       ]
     },
+
+    // Page III
     {
-      "name": "page4",
-      "navigationTitle": "Sample",
-      "navigationDescription": "Initial sample",
+      "name": "page3",
+      "navigationTitle": "Diagnosis",
+      "navigationDescription": "Patient Conditions",
       "elements": [
+
+        // Image Snippet
+        /*
         {
           "type": "image",
           "name": "fouth_page_image",
@@ -603,45 +791,22 @@ class SurveyComponent extends Component {
           "imageHeight": 567,
           "imageWidth": 500
         },
+        */
+
         {
           "type": "panel",
           "name": "initial_sample_collection",
           "elements": [
-            {
-              "type": "text",
-              "name": "date_respiratory_sample_collected",
-              "title": "Date respiratory sample collected",
-              "inputType": "date"
-            },
-            {
-              "type": "radiogroup",
-              "name": "what_type_of_respiratory_sample_was_collected",
-              "title": "What type of respiratory sample was collected?",
-              "hasOther": true,
-              "choices": [
-                {
-                  "value": "item1",
-                  "text": "Nasal swab"
-                },
-                {
-                  "value": "item2",
-                  "text": "Throat swab "
-                },
-                {
-                  "value": "item3",
-                  "text": "Nasopharyngeal swab"
-                }
-              ],
-              "otherText": "Other, specify",
-              "colCount": 2
-            },
+
+            // Asthma
             {
               "type": "panel",
-              "name": "has_baseline_serum_been_taken_panel",
+              "name": "Asthman_panel",
+              //"isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
-                  "name": "has_baseline_serum_been_taken_radio",
+                  "name": "Asthma_radio",
                   "titleLocation": "hidden",
                   "choices": [
                     {
@@ -652,32 +817,23 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
-                {
-                  "type": "text",
-                  "name": "has_baseline_serum_been_taken_date",
-                  "visibleIf": "{has_baseline_serum_been_taken_radio} = 'item1'",
-                  "startWithNewLine": false,
-                  "title": "Date baseline serum taken",
-                  "titleLocation": "left",
-                  "inputType": "date"
-                }
+
               ],
-              "title": "Has baseline serum been taken?"
+              "title": "Asthma"
             },
+
+            // Chronic respiratory disease
             {
               "type": "panel",
-              "name": "were_other_samples_collected_panel",
+              "name": "respiratory_panel",
+              //"isRequired": true,
               "elements": [
                 {
                   "type": "radiogroup",
-                  "name": "were_other_samples_collected_radio",
+                  "name": "respiratory_radio",
                   "titleLocation": "hidden",
                   "choices": [
                     {
@@ -688,41 +844,366 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
-                {
-                  "type": "text",
-                  "name": "were_other_samples_collected_textbox",
-                  "visibleIf": "{were_other_samples_collected_radio} = 'item1'",
-                  "startWithNewLine": false,
-                  "title": "Which samples:"
-                },
-                {
-                  "type": "text",
-                  "name": "were_other_samples_collected_date",
-                  "visibleIf": "{were_other_samples_collected_radio} = 'item1'",
-                  "startWithNewLine": false,
-                  "title": "Date taken",
-                  "inputType": "date"
-                }
+
               ],
-              "title": "Were other samples collected? "
-            }
+              "title": "Chronic respiratory disease"
+            },
+            // Chronic heart disease
+            {
+              "type": "panel",
+              "name": "heart_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "heart_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Chronic heart disease"
+            },
+            // Diabetes
+            {
+              "type": "panel",
+              "name": "Diabetes_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Diabetes_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Diabetes"
+            },
+            // Any Cancer
+            {
+              "type": "panel",
+              "name": "Cancer_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Cancer_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Any Cancer"
+            },
+            // Stroke
+            {
+              "type": "panel",
+              "name": "Stroke_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Stroke_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Stroke"
+            },
+            // Rheumatoid Arthritis
+            {
+              "type": "panel",
+              "name": "Rheumatoid_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Rheumatoid_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Rheumatoid Arthritis"
+            },
+            // Hypertension
+            {
+              "type": "panel",
+              "name": "Hypertension_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Hypertension_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Hypertension"
+            },
+            // Chronic Kidney Disease
+            {
+              "type": "panel",
+              "name": "Kidney_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Kidney_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Chronic Kidney Disease"
+            },
+            // Immunocompromised condition
+            {
+              "type": "panel",
+              "name": "Immunocompromised_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Immunocompromised_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Immunocompromised condition"
+            },
+            // Chronic lung disease
+            {
+              "type": "panel",
+              "name": "lung_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "lung_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Chronic lung disease"
+            },
+            // Obesity (BMI ≥ 30 kg/m²)
+            {
+              "type": "panel",
+              "name": "Obesity_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Obesity_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Obesity (BMI ≥ 30 kg/m²)"
+            },
+            // Pregnancy
+            {
+              "type": "panel",
+              "name": "Pregnancy_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Pregnancy_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Pregnancy"
+            },
+            // Sickle cell disease
+            {
+              "type": "panel",
+              "name": "Sickle_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Sickle_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Sickle cell disease"
+            },
+            // Other chronic condition
+            {
+              "type": "panel",
+              "name": "chronic_panel",
+              //"isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "chronic_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Other chronic condition"
+            },
+
+
           ],
-          "title": "Initial sample collection",
+          "title": "Have you ever been diagnosed with any of the following Conditions:",
           "startWithNewLine": false,
           "showNumber": true,
           "showQuestionNumbers": "off"
         }
       ]
     },
+
+    // Page 0_1
+    /*
     {
-      "name": "page5",
+      "name": "page01",
       "navigationTitle": "Complications",
       "navigationDescription": "Clinical Course",
       "elements": [
@@ -942,15 +1423,55 @@ class SurveyComponent extends Component {
         }
       ]
     },
+    */
+
+    // Page IV
     {
-      "name": "page6",
+      "name": "page4",
       "navigationTitle": "Exposures",
       "navigationDescription": "Before illness",
       "elements": [
         {
           "type": "panel",
-          "name": "human_exposures_in_the_days_before_illness_onset",
+          "name": "direct_exposure",
           "elements": [
+
+
+            {
+              "type": "panel",
+              "name": "others_panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "others_radio",
+                  "width": "50%",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+
+                  ],
+                  "colCount": 2
+                },
+                {
+                  "type": "text",
+                  "name": "others_specify",
+                  "enableIf": "{others_radio} = 'item1'",
+                  "startWithNewLine": false,
+                  "title": "How many:",
+                  "titleLocation": "left"
+                },
+              ],
+              "title": "Do you live with other people?",
+              "showQuestionNumbers": "off"
+            },
+
             {
               "type": "panel",
               "name": "have_you_travelled_within_the_last_days_domestically_panel",
@@ -969,13 +1490,12 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
+
                   ],
                   "colCount": 3
                 },
+
+                /*
                 {
                   "type": "panel",
                   "name": "have_you_travelled_within_the_last_days_domestically_date_panel",
@@ -1014,6 +1534,7 @@ class SurveyComponent extends Component {
                   "title": "Cities visited:",
                   "titleLocation": "left"
                 }
+                */
               ],
               "title": "Have you travelled within the last 14 days domestically?",
               "showQuestionNumbers": "off"
@@ -1036,13 +1557,11 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
+
+                /*
                 {
                   "type": "panel",
                   "name": "have_you_travelled_within_the_last_days_internationall_date_panel",
@@ -1081,6 +1600,7 @@ class SurveyComponent extends Component {
                   "title": "Cities visited:",
                   "titleLocation": "left"
                 }
+                */
               ],
               "title": "Have you travelled within the last 14 days internationally?",
               "showQuestionNumbers": "off"
@@ -1103,13 +1623,11 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
+
+                /*
                 {
                   "type": "text",
                   "name": "in_the_past_days_have_you_had_contact_with_a_anyone_with_suspected_or_confirmed_ncov_infection_date",
@@ -1119,10 +1637,13 @@ class SurveyComponent extends Component {
                   "titleLocation": "left",
                   "inputType": "date"
                 }
+                */
               ],
               "title": "In the past 14 days, have you had contact with a anyone with suspected or confirmed 2019-nCoV infection?",
               "showQuestionNumbers": "off"
             },
+
+
             {
               "type": "panel",
               "name": "patient_attended_festival_or_mass_gathering_panel",
@@ -1141,13 +1662,10 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
+                /*
                 {
                   "type": "text",
                   "name": "patient_attended_festival_or_mass_gathering_specify",
@@ -1156,71 +1674,19 @@ class SurveyComponent extends Component {
                   "title": "Specify:",
                   "titleLocation": "left"
                 }
+                */
               ],
-              "title": "Patient attended festival or mass gathering",
+              "title": "Attended festival or mass gathering in the past 30 days?",
               "showQuestionNumbers": "off"
             },
-            {
-              "type": "radiogroup",
-              "name": "patient_exposed_to_person_with_similar_illness",
-              "title": "Patient exposed to person with similar illness",
-              "width": "50%",
-              "hideNumber": true,
-              "choices": [
-                {
-                  "value": "item1",
-                  "text": "Yes"
-                },
-                {
-                  "value": "item2",
-                  "text": "No"
-                },
-                {
-                  "value": "item3",
-                  "text": "Unknown"
-                }
-              ],
-              "colCount": 3
-            },
-            {
-              "type": "radiogroup",
-              "name": "location_of_exposure",
-              "title": "Location of exposure",
-              "width": "50%",
-              "hideNumber": true,
-              "hasOther": true,
-              "choices": [
-                {
-                  "value": "item1",
-                  "text": "Home"
-                },
-                {
-                  "value": "item2",
-                  "text": "Hospital"
-                },
-                {
-                  "value": "item3",
-                  "text": "Workplace"
-                },
-                {
-                  "value": "item4",
-                  "text": "Tour group"
-                },
-                {
-                  "value": "item5",
-                  "text": "Unknown"
-                }
-              ],
-              "otherText": "Other, specify:",
-              "colCount": 3
-            },
+
             {
               "type": "panel",
-              "name": "patient_visited_or_was_admitted_to_inpatient_health_facility_panel",
+              "name": "illness_panel",
               "elements": [
                 {
                   "type": "radiogroup",
-                  "name": "patient_visited_or_was_admitted_to_inpatient_health_facility_radio",
+                  "name": "illness_radio",
                   "width": "50%",
                   "titleLocation": "hidden",
                   "choices": [
@@ -1232,149 +1698,81 @@ class SurveyComponent extends Component {
                       "value": "item2",
                       "text": "No"
                     },
-                    {
-                      "value": "item3",
-                      "text": "Unknown"
-                    }
                   ],
-                  "colCount": 3
+                  "colCount": 2
                 },
-                {
-                  "type": "text",
-                  "name": "patient_visited_or_was_admitted_to_inpatient_health_facility_specify",
-                  "enableIf": "{patient_visited_or_was_admitted_to_inpatient_health_facility_radio} = 'item1'",
-                  "startWithNewLine": false,
-                  "title": "Specify:",
-                  "titleLocation": "left"
-                },
-                {
-                  "type": "panel",
-                  "name": "patient_visited_outpatient_treatment_facility_panel",
-                  "elements": [
-                    {
-                      "type": "radiogroup",
-                      "name": "patient_visited_outpatient_treatment_facility_radio",
-                      "width": "50%",
-                      "titleLocation": "hidden",
-                      "choices": [
-                        {
-                          "value": "item1",
-                          "text": "Yes"
-                        },
-                        {
-                          "value": "item2",
-                          "text": "No"
-                        },
-                        {
-                          "value": "item3",
-                          "text": "Unknown"
-                        }
-                      ],
-                      "colCount": 3
-                    },
-                    {
-                      "type": "text",
-                      "name": "patient_visited_outpatient_treatment_facility_specify",
-                      "enableIf": "{patient_visited_outpatient_treatment_facility_radio} = 'item1'",
-                      "startWithNewLine": false,
-                      "title": "Specify:",
-                      "titleLocation": "left"
-                    }
-                  ],
-                  "title": "Patient visited outpatient treatment facility"
-                },
-                {
-                  "type": "panel",
-                  "name": "patient_visited_traditional_healer_panel",
-                  "elements": [
-                    {
-                      "type": "radiogroup",
-                      "name": "patient_visited_traditional_healer_radio",
-                      "width": "50%",
-                      "titleLocation": "hidden",
-                      "choices": [
-                        {
-                          "value": "item1",
-                          "text": "Yes"
-                        },
-                        {
-                          "value": "item2",
-                          "text": "No"
-                        },
-                        {
-                          "value": "item3",
-                          "text": "Unknown"
-                        }
-                      ],
-                      "colCount": 3
-                    },
-                    {
-                      "type": "text",
-                      "name": "patient_visited_traditional_healer_specify",
-                      "enableIf": "{patient_visited_traditional_healer_radio} = 'item1'",
-                      "startWithNewLine": false,
-                      "title": "Specify:",
-                      "titleLocation": "left"
-                    },
-                    {
-                      "type": "panel",
-                      "name": "patient_occupation_specify_location_facility_panel",
-                      "elements": [
-                        {
-                          "type": "checkbox",
-                          "name": "patient_occupation_specify_location_facility_checkbox",
-                          "titleLocation": "hidden",
-                          "hasOther": true,
-                          "choices": [
-                            {
-                              "value": "item1",
-                              "text": "Health care worker"
-                            },
-                            {
-                              "value": "item2",
-                              "text": "Working with animals "
-                            },
-                            {
-                              "value": "item3",
-                              "text": "Health laboratory worker"
-                            },
-                            {
-                              "value": "item4",
-                              "text": "Student"
-                            }
-                          ],
-                          "otherText": "Other, specify:",
-                          "colCount": 3
-                        },
-                        {
-                          "type": "text",
-                          "name": "patient_occupation_specify_location_facility_specify",
-                          "visibleIf": "{patient_occupation_specify_location_facility_checkbox} notempty",
-                          "title": "For each occupation, please specify location or facility:",
-                          "titleLocation": "left"
-                        }
-                      ],
-                      "title": "Patient occupation (specify location/facility)",
-                      "showQuestionNumbers": "off"
-                    }
-                  ],
-                  "title": "Patient visited traditional healer"
-                }
               ],
-              "title": "Patient visited or was admitted to inpatient health facility",
+              "title": "Patient exposed to person with similar illness?",
               "showQuestionNumbers": "off"
-            }
+            },
+
+            {
+              "type": "panel",
+              "name": "hygiene_panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "hygiene_radio",
+                  "width": "50%",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+              ],
+              "title": "You perform hand hygiene according to CDC guidance?",
+              "showQuestionNumbers": "off"
+            },
+
+            {
+              "type": "panel",
+              "name": "protection_panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "protection_radio",
+                  "width": "50%",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+              ],
+              "title": "You wear personal protection equipment consistent with CDC guidelines?",
+              "showQuestionNumbers": "off"
+            },
+
           ],
-          "title": "Human exposures in the 14 days before illness onset",
+          "title": "Direct Exposure",
           "showNumber": true
         }
       ]
     },
+
+    // Page V
     {
-      "name": "page7",
+      "name": "page5",
       "navigationTitle": "Completion",
       "navigationDescription": "Status of form",
       "elements": [
+
+        /*
         {
           "type": "image",
           "name": "seventh_image",
@@ -1383,6 +1781,8 @@ class SurveyComponent extends Component {
           "imageHeight": 441,
           "imageWidth": 500
         },
+        */
+
         {
           "type": "panel",
           "name": "status_of_form_completion_panel",
