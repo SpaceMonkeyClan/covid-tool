@@ -28,13 +28,13 @@ class SurveyComponent extends Component {
 
   "pages": [
 
-    //Page 0
-    /*
+    //Page 0 - Patient info
     {
-      "name": "page1",
-      "navigationTitle": "Collector",
-      "navigationDescription": "Collector's info",
+      "name": "page0",
+      "navigationTitle": "Patient",
+      "navigationDescription": "Patient info",
       "elements": [
+        /*
         {
           "type": "image",
           "name": "first_page_image",
@@ -44,6 +44,7 @@ class SurveyComponent extends Component {
           "imageWidth": 500,
           "width": "600px"
         },
+        
         {
           "type": "panel",
           "name": "first_page_container_panel",
@@ -109,34 +110,8 @@ class SurveyComponent extends Component {
               "showNumber": true,
               "showQuestionNumbers": "off"
             }
-          ],
-          "startWithNewLine": false
-        }
-      ]
-    },
-    */
-
-    //Uncomment when done with page III
-
-    // Page I
-    
-    {
-      "name": "page1",
-      "navigationTitle": "Patient",
-      "navigationDescription": "Patient info",
-      "elements": [
-        {
-          "type": "boolean",
-          "name": "is_the_person_providing_the_information_is_the_patient",
-          "title": "Is the person providing the information the patient?",
-          "isRequired": true,
-          "labelTrue": "Yes",
-          "labelFalse": "No",
-          "hideNumber": true
-        },
-
-        // If boolean TRUE
-        {
+            */
+      {
           "type": "panel",
           "name": "case_identifier_information ",
           "elements": [
@@ -187,6 +162,8 @@ class SurveyComponent extends Component {
                   "inputType": "date",
                   "isRequired": true
                 },
+
+                /*
                 {
                   "type": "checkbox",
                   "name": "case_identifier_information_patient_date_of_birth_checkbox",
@@ -196,6 +173,7 @@ class SurveyComponent extends Component {
                     "Unknown"
                   ]
                 }
+                */
               ],
               "title": "Date of Birth"
             },
@@ -232,6 +210,8 @@ class SurveyComponent extends Component {
                   "inputType": "number",
                   "isRequired": true,
                 },
+
+                /*
                 {
                   "type": "checkbox",
                   "name": "case_identifier_information_patient_age_checkbox",
@@ -241,6 +221,7 @@ class SurveyComponent extends Component {
                     "Unknown"
                   ]
                 }
+                */
               ],
               "title": "Age (years, months) "
             },
@@ -383,6 +364,236 @@ class SurveyComponent extends Component {
 
             }
           ],
+          "startWithNewLine": false
+        }
+      ]
+    },
+    
+
+    // Page I
+    /*
+    {
+      "name": "page1",
+      "navigationTitle": "Patient",
+      "navigationDescription": "Patient info",
+      "elements": [
+
+        
+        {
+          "type": "boolean",
+          "name": "is_the_person_providing_the_information_is_the_patient",
+          "title": "Is the person providing the information the patient?",
+          "isRequired": true,
+          "labelTrue": "Yes",
+          "labelFalse": "No",
+          "hideNumber": true
+        },
+
+        // If boolean TRUE
+        {
+          "type": "panel",
+          "name": "case_identifier_information ",
+          "elements": [
+            {
+              "type": "text",
+              "name": "first_names",
+              "title": "First name",
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "last_name",
+              "startWithNewLine": false,
+              "title": "Last name",
+              "isRequired": true
+            },
+            {
+              "type": "radiogroup",
+              "name": "case_identifier_information_sex",
+              "startWithNewLine": false,
+              "title": "Sex",
+              "isRequired": true,
+              "choices": [
+                {
+                  "value": "item1",
+                  "text": "Male"
+                },
+                {
+                  "value": "item2",
+                  "text": "Female"
+                },
+                {
+                  "value": "item3",
+                  "text": "Other/Not known"
+                }
+              ],
+              "colCount": 3
+            },
+            {
+              "type": "panel",
+              "name": "case_identifier_information_patient_date_of_birth_panel",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "case_identifier_information_patient_date_of_birth_date",
+                  "visibleIf": "{case_identifier_information_patient_date_of_birth_checkbox} empty",
+                  "titleLocation": "hidden",
+                  "inputType": "date",
+                  "isRequired": true
+                },
+                {
+                  "type": "checkbox",
+                  "name": "case_identifier_information_patient_date_of_birth_checkbox",
+                  "startWithNewLine": false,
+                  "titleLocation": "hidden",
+                  "choices": [
+                    "Unknown"
+                  ]
+                }
+              ],
+              "title": "Date of Birth"
+            },
+
+            {
+              "type": "panel",
+              "name": "case_identifier_information_patient_age",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "case_identifier_information_patient_age_years",
+                  "visibleIf": "{case_identifier_information_patient_age_checkbox} empty",
+                  "title": "Years:",
+                  "titleLocation": "left",
+                  "inputType": "number",
+                  "isRequired": true
+                },
+                {
+                  "type": "text",
+                  "name": "case_identifier_information_patient_age_months",
+                  "visibleIf": "{case_identifier_information_patient_age_checkbox} empty",
+                  "startWithNewLine": false,
+                  "title": "Months:",
+                  "titleLocation": "left",
+                  "inputType": "number",
+                  "isRequired": true,
+                },
+                {
+                  "type": "checkbox",
+                  "name": "case_identifier_information_patient_age_checkbox",
+                  "startWithNewLine": false,
+                  "titleLocation": "hidden",
+                  "choices": [
+                    "Unknown"
+                  ]
+                }
+              ],
+              "title": "Age (years, months) "
+            },
+
+            // Race/Ethnicity snippet
+            {
+              "type": "dropdown",
+              "name": "case_identifier_information_patient_race",
+              "title": "What is your race/ethnicity?",
+              "isRequired": true,
+              "choices": [
+                "American Indian or Alaska Native",
+                "Asian",
+                "Black or African American",
+                "Hispanic",
+                "Native Hawaiian or Other Pacific Islander",
+                "Non-Hispanic White",
+                "Other"
+              ],
+
+
+            },
+
+
+            // Height snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_height",
+              "title": "What is your height in cm?",
+              "inputType": "text",
+              "isRequired": true
+            },
+
+            // Weight Snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_weight",
+              "startWithNewLine": false,
+              "title": "What is your weight in pounds(lbs)?",
+              "inputType": "text",
+              "isRequired": true,
+            },
+
+
+            // Residence Snippet
+            {
+              "type": "dropdown",
+              "name": "case_identifier_information_patient_country_of_residence",
+              "title": "Country of residence",
+              "isRequired": true,
+              "choices": [
+                "item1",
+                "item2",
+                "item3"
+              ],
+              "choicesByUrl": {
+                "url": "https://restcountries.eu/rest/v2/all",
+                "valueName": "name"
+              }
+            },
+
+            // Zipcode Snippet
+            {
+              "type": "text",
+              "name": "case_identifier_information_patient_zip",
+              "startWithNewLine": false,
+              "title": "What is your zipcode?",
+              "inputType": "text",
+              "isRequired": true
+            },
+
+            // Smoked question
+            {
+              "type": "boolean",
+              "name": "have_you_ever_smoked",
+              "title": "Have you ever smoked?",
+              "isRequired": true,
+              "labelTrue": "Yes",
+              "labelFalse": "No",
+              "hideNumber": true
+            },
+
+            // Case status snippet
+            {
+              "type": "radiogroup",
+              "name": "case_identifier_information_patient_case_status",
+              //"startWithNewLine": false,
+              "title": "Case status",
+              "isRequired": true,
+              "choices": [
+                {
+                  "value": "item1",
+                  "text": "Suspected"
+                },
+                {
+                  "value": "item2",
+                  "text": "Probable"
+                },
+                {
+                  "value": "item3",
+                  "text": "Confirmed"
+                }
+              ],
+              "colCount": 3
+
+
+            }
+          ],
           "visibleIf": "{is_the_person_providing_the_information_is_the_patient} = true",
           "title": "Patient Information",
           "showNumber": true,
@@ -460,27 +671,6 @@ class SurveyComponent extends Component {
               "isRequired": true,
             },
 
-            // Address Snippet
-            /*
-            {
-              "type": "text",
-              "name": "respondent_address",
-              "startWithNewLine": false,
-              "title": "Respondent address"
-            },
-            */
-
-            // Phone # Snippet
-            /*
-            {
-              "type": "text",
-              "name": "interview_respondent_information_patient_telephone_mobile_number",
-              "startWithNewLine": false,
-              "title": "Telephone (mobile) number",
-              "inputType": "tel"
-            }
-            */
-
           ],
           "visibleIf": "{is_the_person_providing_the_information_is_the_patient} = false",
           "title": "Interview respondent information",
@@ -489,25 +679,15 @@ class SurveyComponent extends Component {
         }
       ]
     },
+    */
 
-    // Page II
+    // Page II - Patient Symptoms
+    /*
     {
       "name": "page2",
       "navigationTitle": "Symptoms",
       "navigationDescription": "Patient symptoms",
       "elements": [
-        
-        // Image Snippet
-        /*
-        {
-          "type": "image",
-          "name": "third_page_image",
-          "imageLink": "/Content/Images/examples/covid/03.png",
-          "imageHeight": 690,
-          "imageWidth": 500,
-          "width": "600px"
-        },
-        */
 
         {
           "type": "panel",
@@ -780,8 +960,303 @@ class SurveyComponent extends Component {
         }
       ]
     },
+    */
 
-    // Page III
+    // Page III - Patient Symptoms
+    {
+      "name": "page3",
+      "navigationTitle": "Symptoms",
+      "navigationDescription": "Patient Symptoms",
+      "elements": [
+
+        // Image Snippet
+        /*
+        {
+          "type": "image",
+          "name": "fouth_page_image",
+          "width": "600px",
+          "imageLink": "/Content/Images/examples/covid/04.png",
+          "imageHeight": 567,
+          "imageWidth": 500
+        },
+        */
+
+        {
+          "type": "panel",
+          "name": "initial_sample_collection",
+          "elements": [
+
+            // Fever
+            {
+              "type": "panel",
+              "name": "Fever_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Fever_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Fever (≥38 °C) or history of fever"
+            },
+
+            // Loss of smell and taste
+            {
+              "type": "panel",
+              "name": "smell_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "smell_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Loss of smell and taste"
+            },
+            // Loss of appetite
+            {
+              "type": "panel",
+              "name": "appetite_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "appetite_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Loss of appetite"
+            },
+            // Sore throat
+            {
+              "type": "panel",
+              "name": "throat_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "throat_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Sore throat"
+            },
+            // Runny nose
+            {
+              "type": "panel",
+              "name": "nose_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "nose_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Runny nose"
+            },
+            // Cough
+            {
+              "type": "panel",
+              "name": "Cough_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Cough_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Cough"
+            },
+            // Shortness of Breath
+            {
+              "type": "panel",
+              "name": "Breath_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Breath_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Shortness of Breath"
+            },
+            // Vomiting
+            {
+              "type": "panel",
+              "name": "Vomiting_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Vomiting_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Vomiting"
+            },
+            // Nausea
+            {
+              "type": "panel",
+              "name": "Nausea_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Nausea_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Nausea"
+            },
+            // Diarrhea
+            {
+              "type": "panel",
+              "name": "Diarrhea_panel",
+              "isRequired": true,
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Diarrhea_radio",
+                  "titleLocation": "hidden",
+                  "choices": [
+                    {
+                      "value": "item1",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "item2",
+                      "text": "No"
+                    },
+                  ],
+                  "colCount": 2
+                },
+
+              ],
+              "title": "Diarrhea"
+            },
+          ],
+          "title": "Potential COVID-19 symptoms?",
+          "startWithNewLine": false,
+          "showNumber": true,
+          "showQuestionNumbers": "off"
+        }
+      ]
+    },
+
+    // Page III - Patient Conditions
     {
       "name": "page3",
       "navigationTitle": "Diagnosis",
@@ -1432,7 +1907,7 @@ class SurveyComponent extends Component {
     },
     */
 
-    // Page IV
+    // Page IV - Before Illness
     {
       "name": "page4",
       "navigationTitle": "Exposures",
@@ -1780,7 +2255,7 @@ class SurveyComponent extends Component {
       ]
     },
 
-    // Page V
+    // Page V - Status of form
     {
       "name": "page5",
       "navigationTitle": "Completion",
