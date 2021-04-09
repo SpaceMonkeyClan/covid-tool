@@ -144,21 +144,21 @@ class SurveyComponent extends Component {
               "type": "text",
               "name": "first_names",
               "title": "First name",
-              //"isRequired": true
+              "isRequired": true
             },
             {
               "type": "text",
               "name": "last_name",
               "startWithNewLine": false,
               "title": "Last name",
-              //"isRequired": true
+              "isRequired": true
             },
             {
               "type": "radiogroup",
               "name": "case_identifier_information_sex",
               "startWithNewLine": false,
               "title": "Sex",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -185,7 +185,7 @@ class SurveyComponent extends Component {
                   "visibleIf": "{case_identifier_information_patient_date_of_birth_checkbox} empty",
                   "titleLocation": "hidden",
                   "inputType": "date",
-                  //"isRequired": true
+                  "isRequired": true
                 },
                 {
                   "type": "checkbox",
@@ -220,7 +220,7 @@ class SurveyComponent extends Component {
                   "title": "Years:",
                   "titleLocation": "left",
                   "inputType": "number",
-                  //"isRequired": true
+                  "isRequired": true
                 },
                 {
                   "type": "text",
@@ -230,7 +230,7 @@ class SurveyComponent extends Component {
                   "title": "Months:",
                   "titleLocation": "left",
                   "inputType": "number",
-                  //"isRequired": true,
+                  "isRequired": true,
                 },
                 {
                   "type": "checkbox",
@@ -250,7 +250,7 @@ class SurveyComponent extends Component {
               "type": "dropdown",
               "name": "case_identifier_information_patient_race",
               "title": "What is your race/ethnicity?",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 "American Indian or Alaska Native",
                 "Asian",
@@ -276,7 +276,7 @@ class SurveyComponent extends Component {
               "name": "case_identifier_information_patient_height",
               "title": "What is your height in cm?",
               "inputType": "text",
-              //"isRequired": true
+              "isRequired": true
             },
 
             // Weight Snippet
@@ -286,7 +286,7 @@ class SurveyComponent extends Component {
               "startWithNewLine": false,
               "title": "What is your weight in pounds(lbs)?",
               "inputType": "text",
-              //"isRequired": true,
+              "isRequired": true,
             },
 
             // Email snippet
@@ -324,7 +324,7 @@ class SurveyComponent extends Component {
               "type": "dropdown",
               "name": "case_identifier_information_patient_country_of_residence",
               "title": "Country of residence",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 "item1",
                 "item2",
@@ -343,7 +343,7 @@ class SurveyComponent extends Component {
               "startWithNewLine": false,
               "title": "What is your zipcode?",
               "inputType": "text",
-              //"isRequired": true
+              "isRequired": true
             },
 
             // Smoked question
@@ -351,7 +351,7 @@ class SurveyComponent extends Component {
               "type": "boolean",
               "name": "have_you_ever_smoked",
               "title": "Have you ever smoked?",
-              //"isRequired": true,
+              "isRequired": true,
               "labelTrue": "Yes",
               "labelFalse": "No",
               "hideNumber": true
@@ -363,7 +363,7 @@ class SurveyComponent extends Component {
               "name": "case_identifier_information_patient_case_status",
               //"startWithNewLine": false,
               "title": "Case status",
-              //"isRequired": true,
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -397,19 +397,22 @@ class SurveyComponent extends Component {
             {
               "type": "text",
               "name": "first_name",
-              "title": "First name "
+              "title": "First name ",
+              "isRequired": true
             },
             {
               "type": "text",
-              "name": "surname",
+              "name": "last_name",
               "startWithNewLine": false,
-              "title": "Last name"
+              "title": "Last name",
+              "isRequired": true
             },
             {
               "type": "radiogroup",
               "name": "interview_respondent_information_sex",
               "startWithNewLine": false,
               "title": "Sex",
+              "isRequired": true,
               "choices": [
                 {
                   "value": "item1",
@@ -429,6 +432,7 @@ class SurveyComponent extends Component {
             {
               "type": "panel",
               "name": "interview_respondent_information_patient_date_of_birth_panel",
+              "isRequired": true,
               "elements": [
                 {
                   "type": "text",
@@ -452,7 +456,8 @@ class SurveyComponent extends Component {
             {
               "type": "text",
               "name": "relationship_to_patient",
-              "title": "Relationship to patient"
+              "title": "Relationship to patient",
+              "isRequired": true,
             },
 
             // Address Snippet
