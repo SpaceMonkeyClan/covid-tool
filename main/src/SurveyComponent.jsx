@@ -28,6 +28,32 @@ class SurveyComponent extends Component {
 
   "pages": [
 
+    //Page 0 - Introduction
+    {
+      "name": "page0",
+      "navigationTitle": "Intro",
+      "navigationDescription": "Introduction",
+      "elements": [
+      
+          {
+          "type": "panel",
+          "name": "case_identifier_information ",
+          "elements": [
+
+            {
+               "type": "html",
+               "name": "income_intro",
+               "html": "<article class='intro'>    <h1 class='intro__heading intro__heading--income title'> Introduction </h1>    <div class='intro__body wysiwyg'>       <p>The tool provides an assessment of individualized risks for mortality from COVID-19 using the best publicly available information on risks associated with various predisposing factors. The tool is meant for individuals who are currently not infected and not vaccinated and it does not account for all risk-factors that might increase an individual's chance of infection and/or health complications after infection. We will continue to update the tool as new information on additional risk-factors becomes available. It is important to note that an individual's risk will also heavily depend on personal behavior such as social distancing, hand washing and mask-wearing. It is also crucial to remember that individuals who themselves have a low risk of COVID-19 serious illness and/or mortality, they are still able to spread the infection to others who are at high-risk. The tool is not intended to be used for any medical or treatment decisions.</p>   </div> </article>"
+            },
+          ],
+          "name": "panel",
+          "startWithNewLine": false
+        }
+      ],
+      "name": "Inroduction"
+    },
+        
+
     //Page 0 - Patient info
     {
       "name": "page0",
@@ -2256,13 +2282,14 @@ class SurveyComponent extends Component {
     },
 
     // Page V - Status of form
+    /*
     {
       "name": "page5",
       "navigationTitle": "Completion",
       "navigationDescription": "Status of form",
       "elements": [
 
-        /*
+        
         {
           "type": "image",
           "name": "seventh_image",
@@ -2271,12 +2298,14 @@ class SurveyComponent extends Component {
           "imageHeight": 441,
           "imageWidth": 500
         },
-        */
+        
 
         {
           "type": "panel",
           "name": "status_of_form_completion_panel",
           "elements": [
+
+            
             {
               "type": "boolean",
               "name": "status_of_form_completion_boolean",
@@ -2311,6 +2340,7 @@ class SurveyComponent extends Component {
               ],
               "otherText": "Other, specific:"
             }
+            
           ],
           "title": "Status of form completion",
           "startWithNewLine": false,
@@ -2319,6 +2349,8 @@ class SurveyComponent extends Component {
         }
       ]
     }
+    */
+
   ],
   "showProgressBar": "top",
   "progressBarType": "buttons"
